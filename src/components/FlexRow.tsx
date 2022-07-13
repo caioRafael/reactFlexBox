@@ -6,8 +6,8 @@ interface IFlexRowProps{
     height?: number | string
     background?: string
     wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
-    verticalAlign?: "stretch" | "flex-start" | "flex-end" | "center" | "baseline"
-    horizontalAlign?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly"
+    verticalAlign?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly"
+    horizontalAlign?: "stretch" | "flex-start" | "flex-end" | "center" | "baseline" 
 }
 
 
