@@ -1,12 +1,17 @@
 import { FC, ReactNode } from "react";
 
+type SetFlex = "inherit" | "initial" | "revert" | "revert-layer" | "unset"
+type OrderType =  "inherit" | "initial" | "revert" | "revert-layer" | "unset"
+type BasisType = "auto" | "max-content" | "min-content" | "fit-content" | "content" | OrderType
 interface IFlexItemProps {
     children: ReactNode
     width?: number | string
-    grow?: number | "inherit" | "initial" | "revert" | "revert-layer" | "unset"
-    shrink?: number | "inherit" | "initial" | "revert" | "revert-layer" | "unset"
+    grow?: number | SetFlex
+    shrink?: number | SetFlex
     margin?: number | string
     padding?: number | string
+    basis?: number | BasisType
+    order?: number | OrderType
 }
 
 const FlexItem:FC<IFlexItemProps> = (props) => {
@@ -16,7 +21,9 @@ const FlexItem:FC<IFlexItemProps> = (props) => {
         grow,
         margin = '5px',
         padding,
-        shrink
+        shrink,
+        basis = "auto",
+        order
     } = props
     return (
         <div
@@ -25,7 +32,9 @@ const FlexItem:FC<IFlexItemProps> = (props) => {
                 margin: margin,
                 padding: padding,
                 flexGrow: grow,               
-                flexShrink: shrink 
+                flexShrink: shrink,
+                flexBasis: basis,
+                order: order,
             }}
         >
             {children}

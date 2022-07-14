@@ -1,13 +1,16 @@
 import { FC, ReactNode } from "react";
 
+type AlignItens = "stretch" | "flex-start" | "flex-end" | "center" | "baseline"
+type JustifyContent = "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly"
+type Wrap = 'nowrap' | 'wrap' | 'wrap-reverse'
 interface IFlexRowProps{
     children: ReactNode
     width?: number | string
     height?: number | string
     background?: string
-    wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
-    verticalAlign?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly"
-    horizontalAlign?: "stretch" | "flex-start" | "flex-end" | "center" | "baseline" 
+    wrap?: Wrap
+    verticalAlign?: JustifyContent
+    horizontalAlign?: AlignItens 
 }
 
 
